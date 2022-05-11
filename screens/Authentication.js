@@ -5,7 +5,7 @@ import { GoogleSigninButton } from '@react-native-community/google-signin';
 export default function Authentication(props) {
   return (
     <View style={styles.screen}>
-      <Text style={styles.title}>Welcome To Depresso Not</Text>
+      <Text style={styles.title}>Welcome To DepressoNot</Text>
       <GoogleSigninButton onPress={props.onGoogleButtonPress} />
     </View>
   );
