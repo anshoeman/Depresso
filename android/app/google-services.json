@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "879155870340",
+    "project_id": "depresso-dfab1",
+    "storage_bucket": "depresso-dfab1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879155870340:android:475c5795fc5efdede0e0d1",
+        "android_client_info": {
+          "package_name": "com.depressonot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879155870340-onsvfi6qdcqf701vju3gfvcchp530g0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.depressonot",
+            "certificate_hash": "72240ba31f66c670109065f642e67251056c474f"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXfgUfvmnZhHClZZCIKGZ5vx65-TGml04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879155870340-94gsvtbrkhvjarjsj7nf4ooc2cakkcah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
