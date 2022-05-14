@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     top: 260,
     fontFamily: "Red Hat Display",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: '400',
     fontSize: 21,
     lineHeight: 28,
     display: "flex",
