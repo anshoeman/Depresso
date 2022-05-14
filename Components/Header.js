@@ -7,13 +7,15 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
+import auth from "@react-native-firebase/auth";
 import BottomTab from "./BottomTab";
 import Icon from "react-native-vector-icons/Entypo";
-export default function Header() {
+export default function Header({logout}) {
+
   return (
     <View style={styles.Headers}>
       <Pressable>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>auth().signOut()}>
           <Text style={styles.Logout}>Logout</Text>
         </TouchableOpacity>
       </Pressable>
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
     height: 26,
     left: 272,
     top: 14,
-    fontFamily: "Red Hat Display",
+    fontFamily:"san-serif",
     fontStyle: "normal",
     fontWeight: "100",
     fontSize: 17,
