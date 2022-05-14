@@ -7,33 +7,31 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
+import BottomTab from "./BottomTab";
+import Icon from "react-native-vector-icons/Entypo";
 export default function Header() {
   return (
-    <View style={styles.Header}>
+    <View style={styles.Headers}>
       <Pressable>
         <TouchableOpacity>
           <Text style={styles.Logout}>Logout</Text>
         </TouchableOpacity>
       </Pressable>
+      <View style={styles.Menu}>
+        <Icon name="menu" size={40} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  Header: {
+  Headers: {
     position: "absolute",
-    width: 360,
-    top: -1,
-    left: 0,
+    width: "100%",
     height: 59,
+    left: 0,
+    top: -1,
     backgroundColor: "#F2EFE9",
-  },
-  Hamburger: {
-    position: "absolute",
-    width: 48,
-    height: 44,
-    left: 8,
-    top: 5,
   },
   Logout: {
     position: "absolute",
@@ -43,12 +41,17 @@ const styles = StyleSheet.create({
     top: 14,
     fontFamily: "Red Hat Display",
     fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: 18,
+    fontWeight: "100",
+    fontSize: 17,
     lineHeight: 28,
     display: "flex",
     alignItems: "center",
     textAlign: "center",
     color: "#000000",
+  },
+  Menu: {
+    position: "absolute",
+    left: 8,
+    top: 11,
   },
 });
