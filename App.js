@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
 import Authentication from './screens/Authentication';
-import Authenticated from './screens/Authenticated';
-
+import Navigate from './screens/Navigation/Navigate';
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -34,7 +33,9 @@ export default function App() {
   });
 
   if (authenticated) {
-    return <Authenticated />;
+    return (
+      <Navigate/>
+    );
   }
 
   return <Authentication onGoogleButtonPress={onGoogleButtonPress} />;
