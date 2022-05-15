@@ -8,9 +8,8 @@ import {
 import React from "react";
 import auth from "@react-native-firebase/auth";
 import Icon from "react-native-vector-icons/Entypo";
-import { DrawerActions } from "@react-navigation/native";
 
-export default function Header({navigation}) {
+export default function Header({ navigation }) {
   return (
     <View style={styles.Headers}>
       <Pressable>
@@ -19,9 +18,9 @@ export default function Header({navigation}) {
         </TouchableOpacity>
       </Pressable>
       <View style={styles.Menu}>
-        <Pressable onPress={()=>navigation.dispatch(DrawerActions.openDrawer())}>
+        <Pressable>
           <Icon name="menu" size={40} />
-          </Pressable>
+        </Pressable>
       </View>
     </View>
   );

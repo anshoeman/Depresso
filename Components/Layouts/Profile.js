@@ -3,6 +3,7 @@ import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default function Profile({ user, navigation }) {
+  
   return (
     <View>
       <Image source={{ uri: user?.photoURL }} style={styles.Image} />

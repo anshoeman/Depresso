@@ -3,7 +3,9 @@ import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
 import Authentication from './screens/Authentication';
 import Navigate from './screens/Navigation/Navigate';
+import axios from 'axios'
 export default function App() {
+
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
