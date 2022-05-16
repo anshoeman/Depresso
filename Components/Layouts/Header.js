@@ -8,20 +8,16 @@ import {
 import React from "react";
 import auth from "@react-native-firebase/auth";
 import Icon from "react-native-vector-icons/Entypo";
+import MyTabs from "../Navigation/BottomNavigation/BottomNavgation";
 
 export default function Header({ navigation }) {
   return (
     <View style={styles.Headers}>
       <Pressable>
         <TouchableOpacity onPress={() => auth().signOut()}>
-          <Text style={styles.Logout}>logout</Text>
+          <Text style={styles.Logout}>Logout</Text>
         </TouchableOpacity>
       </Pressable>
-      <View style={styles.Menu}>
-        <Pressable>
-          <Icon name="menu" size={40} />
-        </Pressable>
-      </View>
     </View>
   );
 }

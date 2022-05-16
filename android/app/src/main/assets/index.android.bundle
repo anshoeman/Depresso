@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Error: Unable to resolve module ./index.android from /Users/anshumannehru/Desktop/NewProject/DepressoNot/.: <br><br>None of these files exist:<br> &nbsp;* index.android(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)<br> &nbsp;* index.android/index(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)<br> &nbsp; &nbsp;at ModuleResolver.resolveDependency (/Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:136:15)<br> &nbsp; &nbsp;at DependencyGraph.resolveDependency (/Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/node-haste/DependencyGraph.js:231:43)<br> &nbsp; &nbsp;at /Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/lib/transformHelpers.js:129:24<br> &nbsp; &nbsp;at Server._resolveRelativePath (/Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/Server.js:1107:12)<br> &nbsp; &nbsp;at async Server.requestProcessor [as _processBundleRequest] (/Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/Server.js:450:37)<br> &nbsp; &nbsp;at async Server._processRequest (/Users/anshumannehru/Desktop/NewProject/DepressoNot/node_modules/metro/src/Server.js:406:9)</pre>
+</body>
+</html>

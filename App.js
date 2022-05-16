@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import auth from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-community/google-signin';
-import Authentication from './screens/Authentication';
-import Navigate from './screens/Navigation/Navigate';
-import axios from 'axios'
-export default function App() {
+import React, { useEffect, useState } from "react";
+import auth from "@react-native-firebase/auth";
+import { GoogleSignin } from "@react-native-community/google-signin";
+import Authentication from "./screens/Authentication";
+import BottomNavigationTab from "./Components/Navigation/BottomNavigation/BottomNavgation";
 
+export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
-        '879155870340-94gsvtbrkhvjarjsj7nf4ooc2cakkcah.apps.googleusercontent.com',
+        "879155870340-94gsvtbrkhvjarjsj7nf4ooc2cakkcah.apps.googleusercontent.com",
     });
   }, []);
 
   async function onGoogleButtonPress() {
     // Get the users ID token
     const { idToken } = await GoogleSignin.signIn();
-    
+
     // Create a Google credential with the token
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
@@ -35,11 +34,8 @@ export default function App() {
   });
 
   if (authenticated) {
-    return (
-      <Navigate/>
-    );
+    return <BottomNavigationTab/>
   }
 
   return <Authentication onGoogleButtonPress={onGoogleButtonPress} />;
 }
-

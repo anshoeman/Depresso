@@ -43,14 +43,7 @@ export default function MusicCard({ key, song, genre }) {
       <Card key={key}>
         <Card.Title>{genre}</Card.Title>
         <Card.Divider />
-        <Image source={require("./51cSey4vFWL.jpeg")} style={styles.image} />
         <Button title="Schedule" onPress={scheduleSession} />
-        <Image
-          source={{
-            uri: "https://m.media-amazon.com/images/I/51cSey4vFWL.jpg",
-          }}
-          resizeMode="cover"
-        />
       </Card>
     </View>
   );

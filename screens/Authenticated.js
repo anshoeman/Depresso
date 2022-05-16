@@ -4,7 +4,7 @@ import auth from "@react-native-firebase/auth";
 import Profile from "../Components/Layouts/Profile";
 import Header from "../Components/Layouts/Header";
 
-export default function Authenticated({navigation}) {
+export default function Authenticated({ navigation }) {
   const user = auth().currentUser;
   const singOut = () => {
     auth().signOut();

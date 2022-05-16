@@ -1,4 +1,4 @@
- const object = [
+const object = [
   {
     id: 0,
     song: "https://www.youtube.com/watch?v=hTWKbfoikeg",
@@ -16,4 +16,4 @@
   },
 ];
 
-export default object
+export default object;

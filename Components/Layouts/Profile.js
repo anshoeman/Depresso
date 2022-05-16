@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
-
+import MyTabs from "../Navigation/BottomNavigation/BottomNavgation";
 export default function Profile({ user, navigation }) {
   
   return (
