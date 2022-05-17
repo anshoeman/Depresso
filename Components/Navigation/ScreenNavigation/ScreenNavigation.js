@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Authenticated from "../../../screens/Authenticated";
 import MusicList from "../../Music/MusicList";
+import BottomNavigationTab from "../BottomNavigation/BottomNavgation";
 const Stack = createNativeStackNavigator();
 const AuthScreenNavigation = () => {
   return (
@@ -12,8 +13,8 @@ const AuthScreenNavigation = () => {
         initialRouteName="authenticated"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="authenticated" component={Authenticated} />
-        <Stack.Screen name="music" component={MusicList} />
+        <Stack.Screen name="bottomNavigation" component={BottomNavigationTab} />
+        <Stack.Screen name="musicScreen" component={MusicList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,14 @@
-import { View, Text, Image, StyleSheet, Button } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { Card } from "react-native-elements";
-export default function MusicCard({ key, song, genre }) {
+export default function MusicCard({ key, title, Genre, Artist }) {
   const sessionData = [];
   var minutesToAdd = 120;
   var currentDate = new Date();
@@ -12,7 +19,7 @@ export default function MusicCard({ key, song, genre }) {
   const scheduleSession = () => {
     if (flag === false) {
       sessionData.unshift({
-        name: genre,
+        name: title,
         id: Math.random(),
         date: new Date(futureDate).toLocaleTimeString("en", {
           timeStyle: "short",
@@ -23,7 +30,7 @@ export default function MusicCard({ key, song, genre }) {
       setFlag(true);
       console.log(sessionData);
       alert(
-        `${genre} was added in the queue for the time ${new Date(
+        `${title} was added in the queue for the time ${new Date(
           futureDate
         ).toLocaleTimeString("en", {
           timeStyle: "short",
@@ -37,13 +44,28 @@ export default function MusicCard({ key, song, genre }) {
       alert("song already added");
     }
   };
-
+  console.log(Genre.map((x) => console.log(x)));
   return (
     <View>
       <Card key={key}>
-        <Card.Title>{genre}</Card.Title>
-        <Card.Divider />
-        <Button title="Schedule" onPress={scheduleSession} />
+        <Card.Title>{title}</Card.Title>
+        <Text
+          style={{
+            display: "flex",
+            color: "white",
+            textAlign: "center",
+            fontWeight: "bold",
+            backgroundColor: "#ADD8E6",
+            width: "50%",
+            borderRadius: 50,
+          }}
+        >
+          #{Artist}
+        </Text>
+        <Text> </Text>
+        <TouchableOpacity>
+          <Button title="Schedule" onPress={scheduleSession} color="black" />
+        </TouchableOpacity>
       </Card>
     </View>
   );

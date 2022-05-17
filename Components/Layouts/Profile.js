@@ -7,8 +7,8 @@ export default function Profile({ user, navigation }) {
   return (
     <View>
       <Image source={{ uri: user?.photoURL }} style={styles.Image} />
-      <Text style={styles.username}>{user?.displayName}</Text>
-      <Pressable onPress={() => navigation.navigate("music")}>
+      <Text style={styles.username}>{user?.displayName}{ }</Text>
+      <Pressable onPress={() => navigation.navigate("musicScreen")}>
         <View style={styles.session}>
           <View>
             <Icon
@@ -52,9 +52,24 @@ const styles = StyleSheet.create({
     top: 260,
     fontFamily: "Red Hat Display",
     fontStyle: "normal",
-    fontWeight: "100",
-    fontSize: 21,
+    fontWeight: "900",
+    fontSize: 17 ,
     lineHeight: 28,
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#000000",
+  },
+  greet: {
+    position: "absolute",
+    width: 244,
+    height: 37,
+    // left: 63,
+    textAlign:'center',
+    top: 290,
+    fontFamily: "Red Hat Display",
+    fontWeight: "900",
+    fontSize: 16,
     display: "flex",
     alignItems: "center",
     textAlign: "center",

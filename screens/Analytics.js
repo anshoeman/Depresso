@@ -1,9 +1,18 @@
 import { View, Button, Text } from "react-native";
+import { useState } from "react";
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
+export default function Analytics() {
 
-export default function Analytics({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-     <Text>Graph</Text>
+    <View>
+      <Text>Graph</Text>
     </View>
   );
 }

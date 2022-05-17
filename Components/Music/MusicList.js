@@ -10,18 +10,22 @@ import React from "react";
 
 import object from "./Musicdata";
 import MusicCard from "./MusicCard";
+import BottomNavigationTab from "../Navigation/BottomNavigation/BottomNavgation";
 
 export default function MusicList({ navigation }) {
   return (
     <ScrollView>
       {object.map((x) => {
+        const { aTitle, Artist, Id, Genres } = x;
         return (
-          <MusicCard
-            key={x.id}
-            song={x.song}
-            genre={x.genre}
-            navigation={navigation}
-          />
+          <View>
+            <MusicCard
+              key={Id}
+              title={aTitle}
+              Artist={Artist}
+              Genre={[Genres]}
+            />
+          </View>
         );
       })}
     </ScrollView>
