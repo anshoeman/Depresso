@@ -2,7 +2,7 @@ const object = [
     {
       aTitle: "Dance Monkey",
       Artist: "Tones and I",
-      Genres: ['pop'],
+    Genres: ['pop'],
       Id: 0
     },
     {

@@ -39,7 +39,13 @@ buildscript {
 }
 
 allprojects {
+
     repositories {
+        jcenter(){
+            content{
+                includeGroup("com.google.android.exoplayer")
+            }
+        }
         mavenLocal()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm

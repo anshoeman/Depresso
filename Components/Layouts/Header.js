@@ -6,50 +6,62 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
+import { Header } from "react-native-elements";
+import Icon from "react-native-vector-icons/Ionicons";
 import auth from "@react-native-firebase/auth";
-import Icon from "react-native-vector-icons/Entypo";
-import MyTabs from "../Navigation/BottomNavigation/BottomNavgation";
-
-export default function Header({ navigation }) {
+export default function HeaderBar() {
   return (
-    <View style={styles.Headers}>
-      <Pressable>
+    <View>
+      {/* <Pressable>
         <TouchableOpacity onPress={() => auth().signOut()}>
           <Text style={styles.Logout}>Logout</Text>
         </TouchableOpacity>
-      </Pressable>
+      </Pressable> */}
+      <Header
+        backgroundImageStyle={{}}
+        barStyle="default"
+        centerComponent={{
+          style: { color: "#fff" },
+        }}
+        centerContainerStyle={{}}
+        containerStyle={{ width: "100%" }}
+        leftContainerStyle={{}}
+        placement="center"
+        // rightComponent={{
+        //   icon: (
+        //       <Icon name="home" size={30}/>
+        //   ),
+        //   color: "#fff",
+        // }}
+        rightContainerStyle={{}}
+        statusBarProps={{}}
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  Headers: {
-    position: "absolute",
-    width: "100%",
-    height: 59,
-    left: 0,
-    top: -1,
-    backgroundColor: "#F2EFE9",
-  },
-  Logout: {
-    position: "absolute",
-    width: 75,
-    height: 26,
-    left: 272,
-    top: 14,
-    fontFamily: "san-serif",
-    fontStyle: "normal",
-    fontWeight: "100",
-    fontSize: 17,
-    lineHeight: 28,
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    color: "#000000",
-  },
-  Menu: {
-    position: "absolute",
-    left: 8,
-    top: 11,
-  },
-});
+// import * as React from "react";
+// import { Header, Icon } from "@rneui/base";
+// import { SafeAreaProvider } from "react-native-safe-area-context";
+
+// export default () => {
+//   return (
+//     <Header
+//       backgroundImageStyle={{}}
+//       barStyle="default"
+//       centerComponent={{
+//         text: "MY TITLE",
+//         style: { color: "#fff" }
+//       }}
+//       centerContainerStyle={{}}
+//       containerStyle={{ width: 350 }}
+//       leftComponent={{ icon: "menu", color: "#fff" }}
+//       leftContainerStyle={{}}
+//       linearGradientProps={{}}
+//       placement="center"
+//       rightComponent={{ icon: "home", color: "#fff" }}
+//       rightContainerStyle={{}}
+//       statusBarProps={{}}
+//     />
+//   );
+// }

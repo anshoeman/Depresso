@@ -6,7 +6,7 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "react-native-elements";
 export default function MusicCard({ key, title, Genre, Artist }) {
   const sessionData = [];
@@ -44,7 +44,7 @@ export default function MusicCard({ key, title, Genre, Artist }) {
       alert("song already added");
     }
   };
-  console.log(Genre.map((x) => console.log(x)));
+
   return (
     <View>
       <Card key={key}>

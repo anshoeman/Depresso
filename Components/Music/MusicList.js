@@ -10,7 +10,7 @@ import React from "react";
 
 import object from "./Musicdata";
 import MusicCard from "./MusicCard";
-import BottomNavigationTab from "../Navigation/BottomNavigation/BottomNavgation";
+
 
 export default function MusicList({ navigation }) {
   return (

@@ -142,6 +142,7 @@ android {
 
     defaultConfig {
         applicationId "com.depressonot"
+        multiDexEnabled true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -287,8 +288,11 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support:multidex:2.0.1'
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.1'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.15.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.1'
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
