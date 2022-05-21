@@ -2,41 +2,9 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import React,{useEffect} from "react";
 import { Button } from "react-native-elements";
 import Scheduled from "../Music/ScheduledMusicSession";
-import TrackPlayer from "react-native-track-player";
-const tracks = [
-  {
-    id: 1,
-    url: 'https://sample-music.netlify.app/death%20bed.mp3',
-    title: "Blues Beat"
-  },
-];
+import Play from "../MusicApp/play";
+
 export default function Profile({ user, navigation }) {
-
-  // TrackPlayer.updateOptions({
-  //   stopWithApp: false,
-  //   capabilities: [TrackPlayer.CAPABILITY_PLAY, TrackPlayer.CAPABILITY_PAUSE],
-  //   compactCapabilities: [
-  //     TrackPlayer.CAPABILITY_PLAY,
-  //     TrackPlayer.CAPABILITY_PAUSE,
-  //   ],
-  // });
-
-  // const setUpTrackPlayer = async () => {
-  //   try {
-  //     await TrackPlayer.setupPlayer();
-  //     await TrackPlayer.add(tracks);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  
-  useEffect(() => {
-    TrackPlayer.setupPlayer().then(async() =>{
-      console.log('add songs');
-      await TrackPlayer.add(tracks);
-      TrackPlayer.play();
-    })
-  }, []);
 
   return (
     <View>
@@ -69,7 +37,8 @@ export default function Profile({ user, navigation }) {
       titleProps={{}}
       titleStyle={{ marginHorizontal: 5 }}
     /> */}
-    <Scheduled/>
+      <Scheduled />
+      <Play/>
     </View>
   );
 }
