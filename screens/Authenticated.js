@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image, Button,ScrollView } from "react-native";
 import auth from "@react-native-firebase/auth";
 import Profile from "../Components/Layouts/Profile";
 import HeaderBar from "../Components/Layouts/Header";
@@ -10,9 +10,9 @@ export default function Authenticated({ navigation }) {
     auth().signOut();
   };
   return (
-    <View>
-      <HeaderBar logout={singOut} />
+    <ScrollView>
+      <HeaderBar logout={singOut} user={user} />
       <Profile user={user} navigation={navigation} />
-    </View>
+    </ScrollView>
   );
 }

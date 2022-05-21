@@ -6,62 +6,23 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import { Header } from "react-native-elements";
-import Icon from "react-native-vector-icons/Ionicons";
 import auth from "@react-native-firebase/auth";
-export default function HeaderBar() {
+import { Button } from "react-native-elements";
+export default function HeaderBar({ user }) {
+  const myDate = new Date();
+  const myHours = myDate.getHours();
+
   return (
-    <View>
-      {/* <Pressable>
-        <TouchableOpacity onPress={() => auth().signOut()}>
-          <Text style={styles.Logout}>Logout</Text>
-        </TouchableOpacity>
-      </Pressable> */}
-      <Header
-        backgroundImageStyle={{}}
-        barStyle="default"
-        centerComponent={{
-          style: { color: "#fff" },
-        }}
-        centerContainerStyle={{}}
-        containerStyle={{ width: "100%" }}
-        leftContainerStyle={{}}
-        placement="center"
-        // rightComponent={{
-        //   icon: (
-        //       <Icon name="home" size={30}/>
-        //   ),
-        //   color: "#fff",
-        // }}
-        rightContainerStyle={{}}
-        statusBarProps={{}}
-      />
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 25, textAlign: "left", fontWeight: "bold" }}>
+        Welcome {user?.displayName}
+      </Text>
+      <Text style={{ fontSize: 19, textAlign: "left", fontWeight: "100" }}>
+        Good Morning
+      </Text>
+      <View style={{ width: 180, marginTop: 15 }}>
+        <Button title="Logout" onPress={() => auth().signOut()} />
+      </View>
     </View>
   );
 }
-
-// import * as React from "react";
-// import { Header, Icon } from "@rneui/base";
-// import { SafeAreaProvider } from "react-native-safe-area-context";
-
-// export default () => {
-//   return (
-//     <Header
-//       backgroundImageStyle={{}}
-//       barStyle="default"
-//       centerComponent={{
-//         text: "MY TITLE",
-//         style: { color: "#fff" }
-//       }}
-//       centerContainerStyle={{}}
-//       containerStyle={{ width: 350 }}
-//       leftComponent={{ icon: "menu", color: "#fff" }}
-//       leftContainerStyle={{}}
-//       linearGradientProps={{}}
-//       placement="center"
-//       rightComponent={{ icon: "home", color: "#fff" }}
-//       rightContainerStyle={{}}
-//       statusBarProps={{}}
-//     />
-//   );
-// }

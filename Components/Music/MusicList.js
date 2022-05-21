@@ -11,8 +11,7 @@ import React from "react";
 import object from "./Musicdata";
 import MusicCard from "./MusicCard";
 
-
-export default function MusicList({ navigation }) {
+export default function MusicList() {
   return (
     <ScrollView>
       {object.map((x) => {
