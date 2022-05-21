@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import React from "react";
 import { Card, Button, Avatar } from "react-native-elements";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 export default function Profile({ user, navigation }) {
   return (
     <View
