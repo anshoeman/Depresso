@@ -18,7 +18,11 @@ export default function HeaderBar({ user }) {
         Welcome {user?.displayName}
       </Text>
       <Text style={{ fontSize: 19, textAlign: "left", fontWeight: "100" }}>
-        Good Morning
+        {myHours <= 17 && myHours >= 12
+          ? "Good Afternoon"
+          : myHours <= 12
+          ? "Good Morning"
+          : "Good Evening"}
       </Text>
       <View style={{ width: 180, marginTop: 15 }}>
         <Button title="Logout" onPress={() => auth().signOut()} />

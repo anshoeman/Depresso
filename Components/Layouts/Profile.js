@@ -41,7 +41,7 @@ export default function Profile({ user, navigation }) {
             // icon={<FontAwesome name="music" size={20} color="white"/>}
             // iconRight
             containerStyle={{ margin: 25 }}
-            onPress={()=>navigation.navigate('musicScreen')}
+            onPress={() => navigation.navigate("musicScreen")}
           />
         </View>
       </Card>
@@ -76,7 +76,6 @@ export default function Profile({ user, navigation }) {
 //     />
 //   );
 // }
-
 
 // import * as React from "react";
 // import { Button } from "@rneui/base";

@@ -13,7 +13,7 @@ export default function BottomNavigationTab() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({color, size }) => {
+        tabBarIcon: ({ color, size }) => {
           let iconName;
           color = "black";
           size = 25;
