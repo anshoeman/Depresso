@@ -49,7 +49,7 @@ def find_title_from_index(index):
     return dataset[dataset.index == index]["aTitle"].values[0]
 def get_recommendations(title, cosine_sim=cosine_sim2):
         if title not in dataset['aTitle'].unique():
-            return "Not in Database"
+            return "Not in Database","Not in Database"
         else:
             i=dataset.loc[dataset['aTitle']== title].index[0]
             lst = list(enumerate(cosine_sim[i]))
@@ -65,12 +65,15 @@ class Recommendation(Resource):
         user_query = args['query']
         
         
-        pred,index = get_recommendations("Sucker")
+        pred,index = get_recommendations('Sucker')
         print(pred)
         #json with list of songs(indices)
-        output = {"prediction": index,
         
-        }
+        output = {"prediction1": pred[index[0]],
+        "prediction2": pred[index[2]],
+        
+            }
+       
         return output
 
 
