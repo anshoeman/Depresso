@@ -25,10 +25,10 @@ export default function Authenticated({ navigation }) {
   const [data, setData] = useState({
     predict: " ",
   });
-  //do adb reverse tcp:5000 tcp:5000(only if it still doesnt work)
+  //do adb reverse tcp:5000 tcp:5000(only if it still doesnt work)....
   function getData() {
     axios({
-      method: "POST",
+      method: "POST", 
       url: "http://127.0.0.1:5000/",
     })
       .then((response) => {
