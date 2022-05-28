@@ -7,44 +7,38 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import PushNotification from "react-native-push-notification";
 import { Card } from "react-native-elements";
 export default function MusicCard({ key, title, Genre, Artist }) {
-  const sessionData = [];
-  var minutesToAdd = 120;
-  var currentDate = new Date();
-  var futureDate = new Date(currentDate.getTime() + minutesToAdd * 60000);
-  /*Array Part*/
-  const [flag, setFlag] = useState(false);
-  const [error, setError] = useState(false);
-  const scheduleSession = () => {
-    if (flag === false) {
-      sessionData.unshift({
-        name: title,
-        id: Math.random(),
-        date: new Date(futureDate).toLocaleTimeString("en", {
-          timeStyle: "short",
-          hour12: false,
-          timeZone: "UTC",
-        }),
+  const [notification, setNotification] = useState(true);
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: "test",
+      channelName: "test",
+    });
+  };
+  useEffect(() => {
+    createChannel();
+  }, []);
+  const handleNotification = () => {
+    if (notification === true) {
+      PushNotification.localNotification({
+        channelId: "test",
+        title: `${title}`,
+        message: `${title} was added for your session`,
       });
-      setFlag(true);
-      console.log(sessionData);
-      alert(
-        `${title} was added in the queue for the time ${new Date(
-          futureDate
-        ).toLocaleTimeString("en", {
-          timeStyle: "short",
-          hour12: false,
-          timeZone: "UTC",
-        })}`
-      );
+      setNotification(false);
+      /*Here We Will Call The Post API as an Array*/
+      /*API will be called once*/
     } else {
-      console.log("Song Already Added In Queue");
-      setError(true);
-      alert("song already added");
+      PushNotification.localNotification({
+        channelId: "test",
+        title: `${title}`,
+        message: `${title} is Already Scheduled`,
+      });
     }
   };
-
+  /*API Post For song name*/
   return (
     <View>
       <Card key={key}>
@@ -64,7 +58,7 @@ export default function MusicCard({ key, title, Genre, Artist }) {
         </Text>
         <Text> </Text>
         <TouchableOpacity>
-          <Button title="Schedule" onPress={scheduleSession} color="black" />
+          <Button title="Schedule" onPress={handleNotification} color="black" />
         </TouchableOpacity>
       </Card>
     </View>

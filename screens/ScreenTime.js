@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Graph() {
+export default function ScreenTime() {
   return (
     <View>
-      <Text>Graph</Text>
+      <Text></Text>
     </View>
   )
 }
