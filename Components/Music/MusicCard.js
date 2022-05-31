@@ -1,3 +1,6 @@
+/*
+schedule session button screen
+*/
 import {
   View,
   Text,
@@ -11,6 +14,7 @@ import PushNotification from "react-native-push-notification";
 import { Card } from "react-native-elements";
 export default function MusicCard({ key, title, Genre, Artist }) {
   const [notification, setNotification] = useState(true);
+  const [song, setSong] = useState();
   const createChannel = () => {
     PushNotification.createChannel({
       channelId: "test",
@@ -39,6 +43,11 @@ export default function MusicCard({ key, title, Genre, Artist }) {
     }
   };
   /*API Post For song name*/
+  /*
+  1. call the api based on the input(name of song)
+  2. it will recommend you(the similar song)
+  3. so my schedule session screen should be dynamic 
+  */
   return (
     <View>
       <Card key={key}>

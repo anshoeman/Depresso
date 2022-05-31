@@ -2,6 +2,9 @@ import { View, Text, Button } from "react-native";
 import React, { useState } from "react";
 import Sound from "react-native-sound";
 /*get the scheduled song api here*/
+/*
+1. music player i need to make play pause button....
+*/
 export default function Play() {
   const [music, setMusic] = useState(null);
   const [flag, setFlag] = useState(false);

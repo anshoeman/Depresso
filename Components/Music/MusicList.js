@@ -10,7 +10,7 @@ import React from "react";
 
 import object from "./Musicdata";
 import MusicCard from "./MusicCard";
-
+//call the api here and will make the state here only
 export default function MusicList() {
   return (
     <ScrollView>

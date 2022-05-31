@@ -2,6 +2,7 @@ import { View, Text, Button } from "react-native";
 import React, { useState } from "react";
 import Sound from "react-native-sound";
 import { Card } from "react-native-elements";
+import { Slider } from "react-native-elements";
 /*Get Api For The Scheduled Songs*/
 export default function Play() {
   const [music, setMusic] = useState(null);
@@ -43,6 +44,7 @@ export default function Play() {
         <Card.Title>Dance Monkey</Card.Title>
         <Button title="Play" onPress={PlayScheduledSong}/>
       </Card>
+      <Slider/>
     </View>
   )
 }
