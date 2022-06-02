@@ -72,7 +72,7 @@ class Recommendation(Resource):
         print(pred)
         # json with list of songs(indices)
 
-        output = {"prediction1":"index" }
+        output = {"prediction1":"index"}#[{}]
 
         return output
 

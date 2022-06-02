@@ -14,7 +14,7 @@ import HeaderBar from "../Components/Layouts/Header";
 /*Middleware and save the user API */
 export default function Authenticated({ navigation }) {
   /*
-  const[state,setS]
+    const[state,setState]=useState()
   */
   const user = auth().currentUser;
   const singOut = () => {
