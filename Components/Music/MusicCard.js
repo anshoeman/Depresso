@@ -9,29 +9,37 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-native-elements";
+import {
+  onClickHandleNotification,
+  createChannels,
+} from "./MusicServices/MusicNotification";
+
 export default function MusicCard() {
   const [music, setMusic] = useState([]);
   function fetchDataJSON() {
     fetch("http://127.0.0.1:5000/")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.prediction)
-        setMusic(data.prediction)
+        setMusic(data.prediction);
       });
   }
-  // console.log(music);
   useEffect(() => {
     fetchDataJSON();
-  },[]);
+    createChannels();
+  }, []);
+
   return (
     <ScrollView>
-      {music.map((x) => {
-        return(
-          <Card>
+      {music.map((x, i) => {
+        return (
+          <Card key={i}>
             <Card.Title>{x}</Card.Title>
-            <Button title="Schedule"/>
-         </Card>
-        )
+            <Button
+              title="Schedule"
+              onPress={() => onClickHandleNotification()}
+            />
+          </Card>
+        );
       })}
     </ScrollView>
   );

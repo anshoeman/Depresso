@@ -65,10 +65,9 @@ def get_recommendations(title, cosine_sim=cosine_sim2):
 
 class Recommendation(Resource):
     def get(self):
-        args = parser.parse_args()
-        user_query = args['query']
+        
 
-        pred, index = get_recommendations("Believer")
+        pred, index = get_recommendations("Lithium")
         print(pred)
         pred = pred.tolist()
         # json with list of songs(indices)

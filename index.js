@@ -2,6 +2,7 @@ import { registerRootComponent } from "expo";
 import App from "./App";
 import PushNotification from "react-native-push-notification";
 import { Platform } from "react-native";
+//this function is called when notification is clicked
 PushNotification.configure({
   onNotification: function (notification) {
     console.log("Notification", notification);
