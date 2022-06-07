@@ -1,6 +1,3 @@
-/*
-schedule session button screen
-*/
 import {
   View,
   Text,
@@ -8,69 +5,35 @@ import {
   StyleSheet,
   Button,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import PushNotification from "react-native-push-notification";
 import { Card } from "react-native-elements";
-export default function MusicCard({ key, title, Genre, Artist }) {
-  const [notification, setNotification] = useState(true);
-  const [song, setSong] = useState();
-  const createChannel = () => {
-    PushNotification.createChannel({
-      channelId: "test",
-      channelName: "test",
-    });
-  };
+export default function MusicCard() {
+  const [music, setMusic] = useState([]);
+  function fetchDataJSON() {
+    fetch("http://127.0.0.1:5000/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.prediction)
+        setMusic(data.prediction)
+      });
+  }
+  // console.log(music);
   useEffect(() => {
-    createChannel();
-  }, []);
-  const handleNotification = () => {
-    if (notification === true) {
-      PushNotification.localNotification({
-        channelId: "test",
-        title: `${title}`,
-        message: `${title} was added for your session`,
-      });
-      setNotification(false);
-      /*Here We Will Call The Post API as an Array*/
-      /*API will be called once*/
-    } else {
-      PushNotification.localNotification({
-        channelId: "test",
-        title: `${title}`,
-        message: `${title} is Already Scheduled`,
-      });
-    }
-  };
-  /*API Post For song name*/
-  /*
-  1. call the api based on the input(name of song)
-  2. it will recommend you(the similar song)
-  3. so my schedule session screen should be dynamic 
-  */
+    fetchDataJSON();
+  },[]);
   return (
-    <View>
-      <Card key={key}>
-        <Card.Title>{title}</Card.Title>
-        <Text
-          style={{
-            display: "flex",
-            color: "white",
-            textAlign: "center",
-            fontWeight: "bold",
-            backgroundColor: "#ADD8E6",
-            width: "50%",
-            borderRadius: 50,
-          }}
-        >
-          #{Artist}
-        </Text>
-        <Text> </Text>
-        <TouchableOpacity>
-          <Button title="Schedule" onPress={handleNotification} color="black" />
-        </TouchableOpacity>
-      </Card>
-    </View>
+    <ScrollView>
+      {music.map((x) => {
+        return(
+          <Card>
+            <Card.Title>{x}</Card.Title>
+            <Button title="Schedule"/>
+         </Card>
+        )
+      })}
+    </ScrollView>
   );
 }
 
