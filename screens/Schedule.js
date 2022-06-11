@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import Sound from "react-native-sound";
 
@@ -11,14 +11,14 @@ const Schedule = () => {
       console.log(error);
       return;
     }
-    setMusic(ScheduledSong);
+    console.log(ScheduledSong.getDuration());
   });
-  console.log(music.getDuration());
+
   return (
     <View>
-      <Text>Music{music.getDuration()/60}</Text>
+      <Text>Music</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Schedule
+export default Schedule;
