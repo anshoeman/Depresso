@@ -5,13 +5,14 @@ import {
   StyleSheet,
   Pressable,
 } from "react-native";
-import React from "react";
+import React,{useState} from "react";
 import auth from "@react-native-firebase/auth";
 import { Button } from "react-native-elements";
 export default function HeaderBar({ user }) {
+  // const [userstreak, setUserStreak] = useState(streak);
+  // setUserStreak(streak);
   const myDate = new Date();
   const myHours = myDate.getHours();
-
   return (
     <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 25, textAlign: "left", fontWeight: "bold" }}>

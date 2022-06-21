@@ -25,7 +25,7 @@ export default function Profile({ user, navigation }) {
             size={100}
             rounded
             source={{ uri: user?.photoURL }}
-            title="Bj"
+            title={user?.displayName[0]}
             containerStyle={{ backgroundColor: "grey" }}
           >
             <Avatar.Accessory
