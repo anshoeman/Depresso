@@ -3,7 +3,7 @@ import auth from "@react-native-firebase/auth";
 import { GoogleSignin } from "@react-native-community/google-signin";
 import Authentication from "./screens/Authentication";
 import AuthScreenNavigation from "./Components/Navigation/ScreenNavigation/ScreenNavigation";
-
+import { SafeAreaProvider } from "react-native-safe-area-context";
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -34,7 +34,11 @@ export default function App() {
   });
 
   if (authenticated) {
-    return <AuthScreenNavigation/>
+    return (
+      <SafeAreaProvider>
+        <AuthScreenNavigation />
+      </SafeAreaProvider>
+    );
   }
 
   return <Authentication onGoogleButtonPress={onGoogleButtonPress} />;
