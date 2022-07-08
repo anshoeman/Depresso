@@ -13,7 +13,7 @@ import { Card } from "react-native-elements";
 import PushNotification from "react-native-push-notification";
 const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
-};//return Promise
+}; //return Promise
 export default function MusicCard() {
   const [music, setMusic] = useState([]);
   const [isScheduled, setIsScheduled] = useState(false);
@@ -31,7 +31,7 @@ export default function MusicCard() {
 
   const onClickHandleNotification = () => {
     if (isScheduled) {
-      //POST api for sending the name of the song
+      //POST api for sending the name of the song #1
       PushNotification.localNotification({
         channelId: "React-native-test-id",
         title: "DepressoNot Already Scheduled The Session",

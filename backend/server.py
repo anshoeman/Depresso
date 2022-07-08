@@ -65,9 +65,8 @@ def get_recommendations(title, cosine_sim=cosine_sim2):
 
 class Recommendation(Resource):
     def get(self):
-        
 
-        pred, index = get_recommendations("Lithium")
+        pred, index = get_recommendations("Adore You")
         print(pred)
         pred = pred.tolist()
         # json with list of songs(indices)
@@ -79,8 +78,8 @@ class Recommendation(Resource):
 
         output = {
             "prediction": pred,
-           
-            }
+
+        }
 
         return output
 
