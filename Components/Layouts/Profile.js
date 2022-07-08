@@ -4,10 +4,7 @@ import { Card, Button, Avatar } from "react-native-elements";
 export default function Profile({ user, navigation }) {
   return (
     <View
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
+      style={styles.mainContainer}
     >
       <Card
         containerStyle={{
@@ -44,3 +41,10 @@ export default function Profile({ user, navigation }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    display: "flex",
+    justifyContent: "center",
+  }
+})

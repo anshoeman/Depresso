@@ -34,6 +34,7 @@
     "react-native-linear-gradient": "^2.5.6",
     "react-native-mention-hashtag-text": "^1.0.3",
     "react-native-push-notification": "^8.1.1",
+    "react-native-safe-area-context": "^3.4.1",
     "react-native-screens": "^3.13.1",
     "react-native-sound": "^0.11.2",
     "react-native-touchable-scale": "^2.1.2",

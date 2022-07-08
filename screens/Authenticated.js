@@ -12,6 +12,8 @@ import React, { useState, useEffect } from "react";
 import auth from "@react-native-firebase/auth";
 import Profile from "../Components/Layouts/Profile";
 import HeaderBar from "../Components/Layouts/Header";
+import AppBar from "../Components/Layouts/Head";
+import Menu from "../Components/Layouts/OptionsMenu";
 
 export default function Authenticated({ navigation }) {
   const user = auth().currentUser;
@@ -21,8 +23,10 @@ export default function Authenticated({ navigation }) {
 
   return (
     <ScrollView>
-      <HeaderBar logout={singOut} user={user} />
-      <Profile user={user} navigation={navigation} />
+      <AppBar user={user}/>
+      <Menu />
+      {/* <HeaderBar logout={singOut} user={user} /> */}
+      {/* <Profile user={user} navigation={navigation} /> */}
     </ScrollView>
   );
 }
