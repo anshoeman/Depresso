@@ -23,8 +23,7 @@ export default function Authenticated({ navigation }) {
 
   return (
     <ScrollView>
-      <AppBar user={user}/>
-      <Menu />
+      <AppBar user={user} navigation={navigation}/>
       {/* <HeaderBar logout={singOut} user={user} /> */}
       {/* <Profile user={user} navigation={navigation} /> */}
     </ScrollView>

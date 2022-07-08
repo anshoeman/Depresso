@@ -7,6 +7,9 @@ import Graph from "../../../screens/Graph";
 import ScreenTime from "../../../screens/ScreenTime";
 import Progress from "../../../screens/Progress";
 import MusicCard from "../../Music/MusicCard";
+import Notifications from "../../../screens/Notifications";
+import Music from "../../../screens/Music";
+import Messages from "../../../screens/Messages";
 const Stack = createNativeStackNavigator();
 const AuthScreenNavigation = () => {
   return (
@@ -21,6 +24,9 @@ const AuthScreenNavigation = () => {
         <Stack.Screen name="Graph" component={Graph} />
         <Stack.Screen name="ScreenTime" component={ScreenTime} />
         <Stack.Screen name="CurrentProgress" component={Progress}/>
+        <Stack.Screen name="notifications" component={Notifications}/>
+        <Stack.Screen name="music" component={Music}/>
+        <Stack.Screen name="messages" component={Messages}/>  
       </Stack.Navigator>
     </NavigationContainer>
   );
